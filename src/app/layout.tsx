@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Spike School Management Dashboard",
+  title: "Spike School Management System",
   description: "Next.js School Management System",
 };
 
