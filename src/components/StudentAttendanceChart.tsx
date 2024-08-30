@@ -62,7 +62,7 @@ const StudentAttendanceChart = () => {
           <Bar dataKey="absent" fill="#A593FF" legendType="circle" radius={[10,10, 0,0]} activeBar={<Rectangle fill="#08AEEA" stroke="#A593FF" />} />
         </BarChart>
       </ResponsiveContainer>
-</article>
+  </article>
   )
 }
 
