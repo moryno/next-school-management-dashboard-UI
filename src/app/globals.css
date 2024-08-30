@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.scrollbar-toolkit::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, 0.55) !important;
+    border-radius: 9px;
+  
+  }
+  
+  .scrollbar-toolkit::-webkit-scrollbar {
+    background-color: inherit !important;
+    width: 6px;
+    display: none;
+    
+  }
+  
+  .scrollbar-toolkit:hover::-webkit-scrollbar {
+    display: block;
+  }
+  
