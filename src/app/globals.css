@@ -19,3 +19,22 @@
     display: block;
   }
   
+  .react-calendar{
+    width: 100% !important;
+    border: none !important;
+    font-family: "Inter", sans-serif !important;
+  }
+  .react-calendar__navigation__label__labelText{
+    font-weight: 600 !important;
+    /* color: #A593FF !important; */
+  }
+  .react-calendar__tile--active{
+    background-color: #c3ebfa !important;
+    color: black !important;
+  }
+  .react-calendar__month-view__weekdays__weekday:nth-child(even) {
+    color: #08AEEA !important
+}
+  .react-calendar__month-view__weekdays__weekday:nth-child(odd) {
+    color: #A593FF !important
+}
