@@ -79,7 +79,7 @@ const FinanceChart = () => {
     <article className='bg-white rounded-xl w-full h-full p-4 shadow-md'>
     <div className='flex items-center justify-between'>
         <h1 className="font-semibold text-sm text-gray600">Finance</h1>
-        <Image src="/more.png" alt="this is ellipses icon" width={20} height={20} />
+        <Image src="/moreDark.png" alt="this is ellipses icon" width={20} height={20} />
     </div>
     <ResponsiveContainer width="100%" height="90%">
         <LineChart
