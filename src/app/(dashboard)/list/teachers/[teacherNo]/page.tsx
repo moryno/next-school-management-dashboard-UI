@@ -1,4 +1,6 @@
+import Announcements from "@/components/Announcements"
 import BigCalendar from "@/components/BigCalendar"
+import Performance from "@/components/Performance"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -87,6 +89,8 @@ const SingleTeacherPage = () => {
                     <Link href="/" className="p-3 rounded-md bg-skyLight">Teacher&apos;s Assignments</Link>
                 </div>
             </article>
+            <Performance />
+            <Announcements />
         </section>
     </section>
   )

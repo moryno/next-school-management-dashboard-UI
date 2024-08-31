@@ -2,7 +2,7 @@ import { MdOpenInNew } from "react-icons/md"
 
 const Announcements = () => {
   return (
-    <article className='bg-white rounded-xl w-full h-full p-4 shadow-md'>
+    <article className='bg-white rounded-md w-full h-full p-4 shadow-md'>
     <div className='flex items-center justify-between'>
         <h1 className="font-semibold text-lg text-gray600">Announcements</h1>
         <span className="flex items-center gap-1 cursor-pointer">
