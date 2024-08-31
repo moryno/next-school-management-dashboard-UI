@@ -9,7 +9,7 @@ type ValuePiece = Date | null;
 
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
-const EventCalender = () => {
+const EventCalendar = () => {
     const [value, onChange] = useState<Value>(new Date());
   return (
     <div className='bg-white p-4 rounded-md shadow-md'>
@@ -33,7 +33,7 @@ const EventCalender = () => {
   )
 }
 
-export default EventCalender
+export default EventCalendar
 const events = [
     {
       id: 1,
