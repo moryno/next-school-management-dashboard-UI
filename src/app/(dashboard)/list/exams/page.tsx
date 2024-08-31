@@ -1,24 +1,26 @@
 import GridComponent from "@/components/GridComponent"
 import Pagination from "@/components/Pagination"
 import TableSearch from "@/components/TableSearch"
-import { lessonsData, role } from "@/lib/data"
+import { examsData, role } from "@/lib/data"
 import Image from "next/image"
 import Link from "next/link"
 import { useCallback } from "react"
-export type LessonType = {
+export type ExamType = {
     id: number;
     subject: string;
     class: string;
-    teacher: string;
+    teacher: number;
+    date: string;
 }
-const LessonListPage = () => {
+const ExamListPage = () => {
 
-    const renderRow = useCallback(( record: LessonType) => (
+    const renderRow = useCallback(( record: ExamType) => (
         <tr key={record.id} className="border-b border-gray100 even:bg-slate-50 text-[13px] hover:bg-purpleLight">
 
          <td className="px-3 py-4 font-semibold">{ record.subject }</td>
          <td className="w-[10%] text-center">{ record.class }</td>
          <td className="hidden md:table-cell text-center">{ record.teacher }</td>
+         <td className="hidden md:table-cell text-center">{ record.date }</td>
          <td>
             <div className="flex items-center gap-2">
                 <Link href={`/list/teachers/${record.id}`}>
@@ -41,7 +43,7 @@ const LessonListPage = () => {
   return (
     <section className="bg-white p-4 rounded-md shadow-md flex-1 m-4 mt-0">
         <article className="flex items-center justify-between">
-            <h1 className="hidden md:block text-sm font-semibold">All Lessons</h1>
+            <h1 className="hidden md:block text-sm font-semibold">Exams</h1>
             <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
                 <TableSearch />
                 <div className="flex items-center gap-4 self-end">
@@ -62,13 +64,13 @@ const LessonListPage = () => {
                 </div>
             </div>
         </article>
-         <GridComponent columns={columns} renderRow={renderRow} datasource={lessonsData} />
+         <GridComponent columns={columns} renderRow={renderRow} datasource={examsData} />
          <Pagination />
     </section>
   )
 }
 
-export default LessonListPage
+export default ExamListPage
 
 const columns = [
     {
@@ -81,8 +83,13 @@ const columns = [
          className: "text-center w-[10%]"
     },
     {
-        header: "Teacher",
+        header: "Supervisor",
         accessor: "teacher",
+        className: "hidden md:table-cell text-center"
+    },
+    {
+        header: "Date",
+        accessor: "date",
         className: "hidden md:table-cell text-center"
     },
     {
