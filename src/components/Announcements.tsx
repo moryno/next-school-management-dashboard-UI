@@ -18,7 +18,7 @@ const Announcements = () => {
       </span>
     </div>
     <div className="flex flex-col gap-4 mt-4">
-        <div className="bg-skyLight rounded-md p-4">
+        <div className="bg-skyLight rounded-md p-4 hover:scale-105 transform transition-transform duration-300 ease-in-out cursor-pointer">
             <div className="flex items-center justify-between">
                 <div className="font-medium">Midterm Exams</div>
                 <span className="text-xs text-gray400 bg-white rounded-md px-1 py-1">2024-10-10</span>
@@ -27,7 +27,7 @@ const Announcements = () => {
             Midterm exams will start next week. Please ensure you are prepared and have all necessary materials. 
             </p>
         </div>
-        <div className="bg-purpleLight rounded-md p-4">
+        <div className="bg-purpleLight rounded-md p-4 hover:scale-105 transform transition-transform duration-300 ease-in-out cursor-pointer">
             <div className="flex items-center justify-between">
                 <div className="font-medium">School Closed</div>
                 <span className="text-xs text-gray400 bg-white rounded-md px-1 py-1">2024-10-14</span>
@@ -36,7 +36,7 @@ const Announcements = () => {
              The school will be closed on Friday for a public holiday. Classes will resume on Monday. 
             </p>
         </div>
-        <div className="bg-yellowLight rounded-md p-4">
+        <div className="bg-yellowLight rounded-md p-4 hover:scale-105 transform transition-transform duration-300 ease-in-out cursor-pointer">
             <div className="flex items-center justify-between">
                 <div className="font-medium">Field Trip</div>
                 <span className="text-xs text-gray400 bg-white rounded-md px-1 py-1">2024-11-01</span>

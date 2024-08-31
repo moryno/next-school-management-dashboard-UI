@@ -20,7 +20,7 @@ const EventCalender = () => {
         </div>
         <div className='flex flex-col gap-4'>
             {events.map((event) => (
-                <div className='p-5 rounded-md border-2 border-gray100 border-t-4 odd:border-t-sky even:border-t-purple' key={event.id}>
+                <div className='p-5 rounded-md border-2 border-gray100 border-t-4 odd:border-t-sky even:border-t-purple hover:scale-105 transform transition-transform duration-300 ease-in-out cursor-pointer' key={event.id}>
                     <div className='flex items-center justify-between'>
                         <h1 className='font-semibold text-gray600'>{ event.title }</h1>
                         <span className='text-gray300 text-xs'>{ event.time }</span>
