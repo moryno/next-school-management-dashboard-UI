@@ -128,7 +128,7 @@ export const teachersData = [
 export const studentsData = [
   {
     id: 1,
-    studentId: "1234567890",
+    registrationNo: "ST-1234567890",
     name: "John Doe",
     email: "john@doe.com",
     photo:
@@ -140,7 +140,7 @@ export const studentsData = [
   },
   {
     id: 2,
-    studentId: "1234567890",
+    registrationNo: "ST-1234567890",
     name: "Jane Doe",
     email: "jane@doe.com",
     photo:
@@ -152,7 +152,7 @@ export const studentsData = [
   },
   {
     id: 3,
-    studentId: "1234567890",
+    registrationNo: "ST-1234567890",
     name: "Mike Geller",
     email: "mike@geller.com",
     photo:
@@ -164,7 +164,7 @@ export const studentsData = [
   },
   {
     id: 4,
-    studentId: "1234567890",
+    registrationNo: "ST-1234567890",
     name: "Jay French",
     email: "jay@gmail.com",
     photo:
@@ -176,7 +176,7 @@ export const studentsData = [
   },
   {
     id: 5,
-    studentId: "1234567890",
+    registrationNo: "ST-1234567890",
     name: "Jane Smith",
     email: "jane@gmail.com",
     photo:
@@ -188,7 +188,7 @@ export const studentsData = [
   },
   {
     id: 6,
-    studentId: "1234567890",
+    registrationNo: "ST-1234567890",
     name: "Anna Santiago",
     email: "anna@gmail.com",
     photo:
@@ -200,7 +200,7 @@ export const studentsData = [
   },
   {
     id: 7,
-    studentId: "1234567890",
+    registrationNo: "ST-1234567890",
     name: "Allen Black",
     email: "allen@black.com",
     photo:
@@ -212,7 +212,7 @@ export const studentsData = [
   },
   {
     id: 8,
-    studentId: "1234567890",
+    registrationNo: "ST-1234567890",
     name: "Ophelia Castro",
     email: "ophelia@castro.com",
     photo:
@@ -224,7 +224,7 @@ export const studentsData = [
   },
   {
     id: 9,
-    studentId: "1234567890",
+    registrationNo: "ST-1234567890",
     name: "Derek Briggs",
     email: "derek@briggs.com",
     photo:
@@ -236,7 +236,7 @@ export const studentsData = [
   },
   {
     id: 10,
-    studentId: "1234567890",
+    registrationNo: "ST-1234567890",
     name: "John Glover",
     email: "john@glover.com",
     photo:

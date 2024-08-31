@@ -1,24 +1,24 @@
 import GridComponent from "@/components/GridComponent"
 import Pagination from "@/components/Pagination"
 import TableSearch from "@/components/TableSearch"
-import { role, teachersData } from "@/lib/data"
+import { role, studentsData } from "@/lib/data"
 import Image from "next/image"
 import Link from "next/link"
 import { useCallback } from "react"
-export type TeacherType = {
+export type StudentType = {
     id: number;
-    teacherNo: string;
+    registrationNo: string;
     name: string;
     email?: string;
     photo: string;
-    phone: string;
-    subjects: string[];
-    classes: string[];
+    phone?: string;
+    grade: number;
+    class: string;
     address: string;
 }
-const TeacherListPage = () => {
+const StudentListPage = () => {
 
-    const renderRow = useCallback(( record: TeacherType) => (
+    const renderRow = useCallback(( record: StudentType) => (
         <tr key={record.id} className="border-b border-gray100 even:bg-slate-50 text-[13px] hover:bg-purpleLight">
          <td className="flex items-center gap-4 px-4 py-3">
             <Image 
@@ -30,12 +30,11 @@ const TeacherListPage = () => {
             />
             <div className="flex flex-col">
                 <h3 className="font-semibold">{ record.name }</h3>
-                <p className="text-xs text-gray500">{ record.email }</p>
+                <p className="text-xs text-gray500">{ record.class }</p>
             </div>
          </td>
-         <td className="hidden md:table-cell text-inProgress">{ record.teacherNo }</td>
-         <td className="hidden md:table-cell">{ record.subjects.join(",") }</td>
-         <td className="hidden md:table-cell">{ record.classes.join(",") }</td>
+         <td className="hidden md:table-cell text-inProgress">{ record.registrationNo }</td>
+         <td className="hidden md:table-cell text-center">{ record.grade}</td>
          <td className="hidden lg:table-cell text-inProgress text-center">{ record.phone }</td>
          <td className="hidden lg:table-cell">{ record.address }</td>
          <td>
@@ -60,7 +59,7 @@ const TeacherListPage = () => {
   return (
     <section className="bg-white p-4 rounded-md shadow-md flex-1 m-4 mt-0">
         <article className="flex items-center justify-between">
-            <h1 className="hidden md:block text-sm font-semibold">All Teachers</h1>
+            <h1 className="hidden md:block text-sm font-semibold">All Students</h1>
             <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
                 <TableSearch />
                 <div className="flex items-center gap-4 self-end">
@@ -81,13 +80,13 @@ const TeacherListPage = () => {
                 </div>
             </div>
         </article>
-         <GridComponent columns={columns} renderRow={renderRow} datasource={teachersData} />
+         <GridComponent columns={columns} renderRow={renderRow} datasource={studentsData} />
          <Pagination />
     </section>
   )
 }
 
-export default TeacherListPage
+export default StudentListPage
 
 const columns = [
     {
@@ -95,19 +94,14 @@ const columns = [
         accessor: "info"
     },
     {
-        header: "Teacher No.",
-        accessor: "teacherNo",
+        header: "Registration No.",
+        accessor: "registrationNo",
         className: "hidden md:table-cell"
     },
     {
-        header: "Subjects",
-        accessor: "subjects",
-        className: "hidden md:table-cell"
-    },
-    {
-        header: "Classes",
-        accessor: "classes",
-         className: "hidden md:table-cell"
+        header: "Grade",
+        accessor: "grade",
+        className: "hidden md:table-cell text-center"
     },
     {
         header: "Phone",

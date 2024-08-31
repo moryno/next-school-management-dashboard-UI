@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react"
-import { TeacherType } from "@/app/(dashboard)/list/teachers/page";
 
 export type columnType ={
     header: string;
@@ -8,7 +7,7 @@ export type columnType ={
 }
 interface IProps{
     columns: columnType[];
-    renderRow: ( record: TeacherType) => ReactNode;
+    renderRow: ( record: any) => ReactNode;
     datasource: any[]
 }
 const GridComponent:React.FC<IProps> = ({ columns, renderRow, datasource }) => {
