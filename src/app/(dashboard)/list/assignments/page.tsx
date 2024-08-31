@@ -5,7 +5,7 @@ import { assignmentsData, role } from "@/lib/data"
 import Image from "next/image"
 import Link from "next/link"
 import { useCallback } from "react"
-export type ExamType = {
+export type AssignmentType = {
     id: number;
     subject: string;
     class: string;
@@ -14,7 +14,7 @@ export type ExamType = {
 }
 const AssignmentListPage = () => {
 
-    const renderRow = useCallback(( record: ExamType) => (
+    const renderRow = useCallback(( record: AssignmentType) => (
         <tr key={record.id} className="border-b border-gray100 even:bg-slate-50 text-[13px] hover:bg-purpleLight">
 
          <td className="px-3 py-4 font-semibold">{ record.subject }</td>
