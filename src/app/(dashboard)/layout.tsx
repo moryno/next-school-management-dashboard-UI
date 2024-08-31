@@ -23,7 +23,7 @@ export default function DashboardLayout({
           </Link>
           <Menu />
         </section>
-        <section className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#f7f8fa] overflow-y-scroll scrollbar-toolkit">
+        <section className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#f7f8fa] flex flex-col overflow-y-scroll scrollbar-toolkit">
           <Navbar />
           { children }
         </section>
