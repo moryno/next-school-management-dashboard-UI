@@ -48,7 +48,7 @@ const TeacherListPage = () => {
                 {
                     role === "admin" && (
                      <button className="w-7 h-7 flex items-center justify-center rounded-full bg-purple">
-                        <Image src="/delete.png" alt="this is view button" width={16} height={16} />
+                        <Image src="/delete.png" alt="this is delete button" width={16} height={16} />
                      </button>
                     )
                 }
