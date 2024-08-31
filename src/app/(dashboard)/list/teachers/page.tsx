@@ -1,3 +1,4 @@
+import Pagination from "@/components/Pagination"
 import TableSearch from "@/components/TableSearch"
 import Image from "next/image"
 
@@ -22,7 +23,7 @@ const TeacherListPage = () => {
             </div>
         </article>
         <article className="flex items-center justify-between"></article>
-        <article className="flex items-center justify-between"></article>
+            <Pagination />
     </section>
   )
 }
