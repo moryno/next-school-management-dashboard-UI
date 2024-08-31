@@ -1,24 +1,24 @@
 import GridComponent from "@/components/GridComponent"
 import Pagination from "@/components/Pagination"
 import TableSearch from "@/components/TableSearch"
-import { role, subjectsData } from "@/lib/data"
+import { lessonsData, role } from "@/lib/data"
 import Image from "next/image"
 import Link from "next/link"
 import { useCallback } from "react"
-export type SubjectType = {
+export type LessonType = {
     id: number;
-    name: string;
-    teachers: string[];
-    compulsory: boolean;
+    subject: string;
+    class: string;
+    teacher: number;
 }
-const SubjectListPage = () => {
+const LessonListPage = () => {
 
-    const renderRow = useCallback(( record: SubjectType) => (
+    const renderRow = useCallback(( record: LessonType) => (
         <tr key={record.id} className="border-b border-gray100 even:bg-slate-50 text-[13px] hover:bg-purpleLight">
 
-         <td className="px-3 py-4 font-semibold">{ record.name }</td>
-         <td className={`hidden md:table-cell text-center  w-[8%] ${record.compulsory ? "bg-completed" : "bg-inProgress"} text-white`}>{ record.compulsory ? "YES" : "NO" }</td>
-         <td className="hidden md:table-cell px-4">{ record.teachers.join(", ") }</td>
+         <td className="px-3 py-4 font-semibold">{ record.subject }</td>
+         <td className="w-[10%] text-center">{ record.class }</td>
+         <td className="hidden md:table-cell text-center">{ record.teacher }</td>
          <td>
             <div className="flex items-center gap-2">
                 <Link href={`/list/teachers/${record.id}`}>
@@ -41,7 +41,7 @@ const SubjectListPage = () => {
   return (
     <section className="bg-white p-4 rounded-md shadow-md flex-1 m-4 mt-0">
         <article className="flex items-center justify-between">
-            <h1 className="hidden md:block text-sm font-semibold">All Subjects</h1>
+            <h1 className="hidden md:block text-sm font-semibold">All Lessons</h1>
             <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
                 <TableSearch />
                 <div className="flex items-center gap-4 self-end">
@@ -62,28 +62,31 @@ const SubjectListPage = () => {
                 </div>
             </div>
         </article>
-         <GridComponent columns={columns} renderRow={renderRow} datasource={subjectsData} />
+         <GridComponent columns={columns} renderRow={renderRow} datasource={lessonsData} />
          <Pagination />
     </section>
   )
 }
 
-export default SubjectListPage
+export default LessonListPage
 
 const columns = [
     {
-        header: "Subject Name",
-        accessor: "name"
+        header: "Subject",
+        accessor: "subject"
     },
     {
-        header: "Compulsory",
-        accessor: "compulsory",
-        className: "hidden md:table-cell text-center w-[8%]"
+        header: "Class",
+        accessor: "class",
+         className: "text-center w-[10%]"
     },
     {
-        header: "Teachers",
-        accessor: "email",
-         className: "hidden md:table-cell px-4"
+        header: "Teacher",
+        accessor: "teacher",
+        className: "hidden md:table-cell text-center"
     },
-
+    {
+        header: "Actions",
+        accessor: "action"
+    }
 ]
