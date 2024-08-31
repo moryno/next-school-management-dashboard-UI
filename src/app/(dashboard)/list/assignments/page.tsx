@@ -9,7 +9,7 @@ export type AssignmentType = {
     id: number;
     subject: string;
     class: string;
-    teacher: number;
+    teacher: string;
     dueDate: string;
 }
 const AssignmentListPage = () => {

@@ -694,8 +694,8 @@ export const resultsData = [
     teacher: "John Doe",
     student: "John Doe",
     date: "2025-01-01",
-    type: "exam",
-    score: 90,
+    type: "assignment",
+    score: 26,
   },
   {
     id: 3,
@@ -714,8 +714,8 @@ export const resultsData = [
     teacher: "John Doe",
     student: "John Doe",
     date: "2025-01-01",
-    type: "exam",
-    score: 90,
+    type: "assignment",
+    score: 35,
   },
   {
     id: 5,
@@ -734,8 +734,8 @@ export const resultsData = [
     teacher: "John Doe",
     student: "John Doe",
     date: "2025-01-01",
-    type: "exam",
-    score: 90,
+    type: "assignment",
+    score: 34,
   },
   {
     id: 7,
@@ -754,8 +754,8 @@ export const resultsData = [
     teacher: "John Doe",
     student: "John Doe",
     date: "2025-01-01",
-    type: "exam",
-    score: 90,
+    type: "assignment",
+    score: 27,
   },
   {
     id: 9,
