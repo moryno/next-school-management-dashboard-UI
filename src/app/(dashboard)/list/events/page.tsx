@@ -1,24 +1,27 @@
 import GridComponent from "@/components/GridComponent"
 import Pagination from "@/components/Pagination"
 import TableSearch from "@/components/TableSearch"
-import { role, subjectsData } from "@/lib/data"
+import { eventsData, role } from "@/lib/data"
 import Image from "next/image"
 import Link from "next/link"
 import { useCallback } from "react"
-export type SubjectType = {
+export type EventType = {
     id: number;
-    name: string;
-    teachers: string[];
-    compulsory: boolean;
+    title: string;
+    class: string;
+    date: string;
+    startTime: string;
+    endTime: string;
 }
-const SubjectListPage = () => {
+const EventListPage = () => {
 
-    const renderRow = useCallback(( record: SubjectType) => (
+    const renderRow = useCallback(( record: EventType) => (
         <tr key={record.id} className="border-b border-gray100 even:bg-slate-50 text-[13px] hover:bg-purpleLight">
-
-         <td className="px-3 py-4 font-semibold">{ record.name }</td>
-         <td className={`hidden md:table-cell text-center  w-[8%] ${record.compulsory ? "bg-completed" : "bg-inProgress"} text-white`}>{ record.compulsory ? "YES" : "NO" }</td>
-         <td className="hidden md:table-cell px-4">{ record.teachers.join(", ") }</td>
+         <td className="px-3 py-4 font-semibold">{ record.title }</td>
+         <td className="w-[10%] text-center">{ record.class }</td>
+         <td className="hidden md:table-cell text-center">{ record.date }</td>
+         <td className="hidden md:table-cell">{ record.startTime }</td>
+         <td className="hidden md:table-cell text-center">{ record.endTime }</td>
          <td>
             <div className="flex items-center gap-2">
                 <Link href={`/list/teachers/${record.id}`}>
@@ -41,7 +44,7 @@ const SubjectListPage = () => {
   return (
     <section className="bg-white p-4 rounded-md shadow-md flex-1 m-4 mt-0">
         <article className="flex items-center justify-between">
-            <h1 className="hidden md:block text-sm font-semibold">All Subjects</h1>
+            <h1 className="hidden md:block text-sm font-semibold">Events</h1>
             <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
                 <TableSearch />
                 <div className="flex items-center gap-4 self-end">
@@ -62,29 +65,42 @@ const SubjectListPage = () => {
                 </div>
             </div>
         </article>
-         <GridComponent columns={columns} renderRow={renderRow} datasource={subjectsData} />
+         <GridComponent columns={columns} renderRow={renderRow} datasource={eventsData} />
          <Pagination />
     </section>
   )
 }
 
-export default SubjectListPage
+export default EventListPage
 
 const columns = [
     {
-        header: "Subject Name",
-        accessor: "name",
-         className: "px-3"
+        header: "Event",
+        accessor: "title",
+        className: "px-3"
     },
     {
-        header: "Compulsory",
-        accessor: "compulsory",
-        className: "hidden md:table-cell text-center w-[8%]"
+        header: "Class",
+        accessor: "class",
+         className: "text-center w-[10%]"
     },
     {
-        header: "Teachers",
-        accessor: "email",
-         className: "hidden md:table-cell px-4"
+        header: "date",
+        accessor: "teacher",
+        className: "hidden md:table-cell text-center"
     },
-
+    {
+        header: "Start Time",
+        accessor: "startTime",
+        className: "hidden md:table-cell text-center"
+    },
+    {
+        header: "End Time",
+        accessor: "endTime",
+        className: "hidden md:table-cell text-center"
+    },
+    {
+        header: "Actions",
+        accessor: "action"
+    }
 ]

@@ -75,7 +75,8 @@ export default ClassListPage
 const columns = [
     {
         header: "Class",
-        accessor: "name"
+        accessor: "name",
+         className: "px-3"
     },
     {
         header: "Capacity",

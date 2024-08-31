@@ -92,7 +92,8 @@ export default TeacherListPage
 const columns = [
     {
         header: "Info",
-        accessor: "info"
+        accessor: "info",
+         className: "px-3"
     },
     {
         header: "Teacher No.",

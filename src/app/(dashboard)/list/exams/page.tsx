@@ -75,7 +75,8 @@ export default ExamListPage
 const columns = [
     {
         header: "Subject",
-        accessor: "subject"
+        accessor: "subject",
+         className: "px-3"
     },
     {
         header: "Class",

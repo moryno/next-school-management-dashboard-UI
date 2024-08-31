@@ -91,7 +91,8 @@ export default StudentListPage
 const columns = [
     {
         header: "Info",
-        accessor: "info"
+        accessor: "info",
+         className: "px-3"
     },
     {
         header: "Registration No.",

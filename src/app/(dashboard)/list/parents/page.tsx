@@ -77,7 +77,8 @@ export default ParentListPage
 const columns = [
     {
         header: "Parent Name",
-        accessor: "name"
+        accessor: "name",
+         className: "px-3"
     },
     {
         header: "Email",
