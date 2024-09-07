@@ -1,8 +1,23 @@
-import { role } from "@/lib/data";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Menu = () => {
+  const [role, setRole] = useState<string | null>(null);
+
+  useEffect(() => {
+      // This will only run in the browser, after the component mounts
+      if (typeof window !== 'undefined') {
+          const currentUser = localStorage.getItem("currentUser");
+          if (currentUser) {
+              const user = JSON.parse(currentUser);
+              setRole(user?.role);
+          }
+      }
+  }, []);
+
   return (
     <article className='mt-4 text-xs'>
       {menuItems.map((menu) => (
@@ -11,7 +26,7 @@ const Menu = () => {
             { menu.title }
           </span>
           { menu.items.map((item) => {
-            if(item.visible.includes(role)){
+            if(role &&  item.visible.includes(role)){
               return (
                 <Link href={item.href} key={item.label} className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 md:px-2 rounded-md hover:bg-skyLight">
                   <Image src={item.icon} alt="this is menu icon" width={20} height={20} />
@@ -135,7 +150,7 @@ const menuItems = [
       {
         icon: "/logout.png",
         label: "Logout",
-        href: "/logout",
+        href: "/sign-in/demo",
         visible: ["admin", "teacher", "student", "parent"],
       },
     ],

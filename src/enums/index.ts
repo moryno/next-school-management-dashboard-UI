@@ -1,0 +1,16 @@
+export enum DomianEnum {
+  ADMIN = "admin",
+  TEACHER = "teacher",
+  STUDENT = "student",
+  PARENT = "parent",
+  ANNOUNCEMENT = "announcement",
+  ASSIGNMENT = "assignment",
+  CLASS = "class",
+  EVENTS = "events",
+  EXAMS = "exams",
+  LESSON = "lesson",
+  RESULT = "result",
+  SUBJECT = "subject",
+  ATTENDANCE = "attendance",
+  MESSAGE = "message",
+}

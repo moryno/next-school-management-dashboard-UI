@@ -26,8 +26,8 @@ const LoginPage = () => {
   console.log(data)
   })
   return (
-    <main className="w-screen h-screen flex justify-center items-center bg-skyLight">
-      <article className="bg-white rounded-md shadow-md p-4 w-[90%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[30%]">
+    <main className="w-screen h-screen flex justify-center items-center bg-[#eee]">
+      <article className="bg-white rounded-md shadow-md p-4 w-[90%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[30%] 2xl:w-[25%]">
         <form className="flex flex-col gap-8" onSubmit={onSubmit}>
         <h1 className="text-lg font-semibold text-center">School Management System Login</h1>
         <div className="w-full">
@@ -60,10 +60,10 @@ const LoginPage = () => {
               )
           }
        </div>
-          <button className="bg-blue-400 font-medium text-white py-1 px-3 border-none">SIGN IN</button>
+          <button className="bg-blue-400 text-white py-2 px-3 border-none">SIGN IN</button>
           <div className="flex flex-col gap-2">
             <p className="text-sm text-gray500">Create an account? <Link className="text-inProgress underline" href={"/"}>Sign Up</Link></p>
-            <p className="text-sm text-gray500">Sign in as a demo user? <Link className="text-inProgress underline" href={"/"}>Demo User</Link></p>
+            <p className="text-sm text-gray500">Sign in as a demo user? <Link className="text-inProgress underline" href={"/sign-in/demo"}>Demo User</Link></p>
           </div>
         </form>
       </article>
