@@ -1,3 +1,4 @@
+import FormModal from "@/components/FormModal"
 import GridComponent from "@/components/GridComponent"
 import Pagination from "@/components/Pagination"
 import TableSearch from "@/components/TableSearch"
@@ -23,16 +24,12 @@ const ExamListPage = () => {
          <td className="hidden md:table-cell text-center">{ record.date }</td>
          <td>
             <div className="flex items-center gap-2">
-                <Link href={`/list/teachers/${record.id}`}>
-                 <button className="w-7 h-7 flex items-center justify-center rounded-full bg-sky">
-                    <Image src="/edit.png" alt="this is edit button" width={16} height={16} />
-                 </button>
-                </Link>
                 {
                     role === "admin" && (
-                     <button className="w-7 h-7 flex items-center justify-center rounded-full bg-purple">
-                        <Image src="/delete.png" alt="this is delete button" width={16} height={16} />
-                     </button>
+                        <>
+                        <FormModal table="exam" type="edit" data={record} />
+                        <FormModal table="exam" type="delete" id={record.id} />
+                        </>
                     )
                 }
             </div>
@@ -55,9 +52,7 @@ const ExamListPage = () => {
                     </button>
                     {
                         role === "admin" && (
-                            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-completed">
-                            <Image src="/plus.png" alt="this is a filter icon" width={14} height={14} />
-                        </button>
+                            <FormModal table="exam" type="create" />
                         )
                     }
 

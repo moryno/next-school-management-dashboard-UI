@@ -1,3 +1,4 @@
+import FormModal from "@/components/FormModal"
 import GridComponent from "@/components/GridComponent"
 import Pagination from "@/components/Pagination"
 import TableSearch from "@/components/TableSearch"
@@ -35,9 +36,10 @@ const ResultListPage = () => {
                 </Link>
                 {
                     role === "admin" && (
-                     <button className="w-7 h-7 flex items-center justify-center rounded-full bg-purple">
-                        <Image src="/delete.png" alt="this is delete button" width={16} height={16} />
-                     </button>
+                        <>
+                        <FormModal table="result" type="edit" data={record} />
+                        <FormModal table="result" type="delete" id={record.id} />
+                        </>
                     )
                 }
             </div>
@@ -60,9 +62,7 @@ const ResultListPage = () => {
                     </button>
                     {
                         role === "admin" && (
-                            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-completed">
-                            <Image src="/plus.png" alt="this is a filter icon" width={14} height={14} />
-                        </button>
+                            <FormModal table="result" type="create" />
                         )
                     }
 
