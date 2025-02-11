@@ -8,9 +8,9 @@ const Menu = () => {
   const [role, setRole] = useState<string | null>(null);
 
   useEffect(() => {
-      // This will only run in the browser, after the component mounts
       if (typeof window !== 'undefined') {
           const currentUser = localStorage.getItem("currentUser");
+          console.log(currentUser)
           if (currentUser) {
               const user = JSON.parse(currentUser);
               setRole(user?.role);
